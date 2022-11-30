@@ -1,0 +1,16 @@
+{
+  "name": "jsonparse",
+  "version": "1.0.0",
+  "description": "Parse JSON",
+  "main": "parse.js",
+  "scripts": {
+    "start": "node parse.js",
+    "inspect": "node --inspect=9221 --inspect-brk parse.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danne Lundqvist",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.12.0"
+  }
+}
