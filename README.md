@@ -6,10 +6,10 @@ This is a hack. Jsonparse is an experiment to see if it would be possible to cre
 It will count elements and give an overview of the JSON structure on stdout.
 
 ## Warning
-**The code might contain errors. No typeScript. Not tests. There is no error checking, this was an experiment!**
+**The code might contain errors, no typeScript, no tests, no error checking. This was an experiment!**
 
 ## Usage
-```javascript
+```bash
 cd jsonparse
 npm i
 node parse [filename] > outfile.json
