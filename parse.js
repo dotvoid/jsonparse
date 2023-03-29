@@ -1,7 +1,14 @@
 const fs = require('fs')
 const JsonParser = require('./classes/JsonParser')
 
-fs.readFile('./examples/simpleevents.json', 'utf8', function (err, data) {
+if (process.argv.length !== 3) {
+    console.warn("USAGE: nnode jsonparse file.json\n")
+    return
+}
+
+const filePath = process.argv[2]
+
+fs.readFile(filePath, 'utf8', function (err, data) {
     const jsonParser = new JsonParser({
         parsers: {
             string: [
@@ -34,35 +41,3 @@ fs.readFile('./examples/simpleevents.json', 'utf8', function (err, data) {
         )
     )
 })
-
-
-// fs.readFile('./examples/package-lock.json', 'utf8', function (err, data) {
-//     const jsonParser = new JsonParser({
-//         parsers: {
-//             object: [
-//                 {
-//                     path: '#root.dependencies',
-//                     Map: () => true
-//                 },
-//                 {
-//                     // Does not work
-//                     path: '#root.dependencies.#object.requires',
-//                     Map: () => true
-//                 },
-//                 {
-//                     // Does not work
-//                     path: '#root.dependencies.#object.dependencies',
-//                     Map: () => true
-//                 }
-//             ]
-//         }
-//     })
-
-//     console.log(
-//         JSON.stringify(
-//             jsonParser.parse(data),
-//             null,
-//             4
-//         )
-//     )
-// })
